@@ -1,3 +1,8 @@
+# dark mode sample applications
+
+https://www.joshwcomeau.com/react/dark-mode/
+https://zenn.dev/minguu42/articles/20220113-nextjs-darkmode
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started

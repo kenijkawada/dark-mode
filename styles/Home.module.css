@@ -18,6 +18,30 @@
   font-family: var(--font-mono);
 }
 
+.rightModeButton {
+  height: 45px;
+  width: 45px;
+  border: none;
+  background-color: transparent;
+}
+
+.rightModeButton i {
+  font-size: 26px;
+  color: black;
+}
+
+.darkModeButton {
+  height: 45px;
+  width: 45px;
+  border: none;
+  background-color: transparent;
+}
+
+.darkModeButton i {
+  font-size: 26px;
+  color: white;
+}
+
 .description a {
   display: flex;
   justify-content: center;
@@ -97,7 +121,7 @@
 
 .center::before,
 .center::after {
-  content: '';
+  content: "";
   left: 50%;
   position: absolute;
   filter: blur(45px);
@@ -125,7 +149,7 @@
 
 .thirteen::before,
 .thirteen::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
 }
@@ -257,15 +281,13 @@
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
+[data-theme="dark"] .vercelLogo {
+  filter: invert(1);
+}
 
-  .logo,
-  .thirteen img {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
-  }
+[data-theme="dark"] .logo,
+.thirteen img {
+  filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
 }
 
 @keyframes rotate {

@@ -1,11 +1,14 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "next/font/google";
+import styles from "@/styles/Home.module.css";
+import { useThemeContext } from "@/theme";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useThemeContext();
+
   return (
     <>
       <Head>
@@ -21,21 +24,21 @@ export default function Home() {
             <code className={styles.code}>pages/index.tsx</code>
           </p>
           <div>
-            <a
-              href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              By{' '}
-              <Image
-                src="/vercel.svg"
-                alt="Vercel Logo"
-                className={styles.vercelLogo}
-                width={100}
-                height={24}
-                priority
-              />
-            </a>
+            {colorMode === "light" ? (
+              <button
+                className={styles.rightModeButton}
+                onClick={toggleColorMode}
+              >
+                <i className="bx bx-sun"></i>
+              </button>
+            ) : (
+              <button
+                className={styles.darkModeButton}
+                onClick={toggleColorMode}
+              >
+                <i className="bx bxs-moon"></i>
+              </button>
+            )}
           </div>
         </div>
 
@@ -119,5 +122,5 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
 }
